@@ -35,14 +35,6 @@ sudo gem install utility_belt
 * Grammatically-correct is_an? method - no more "is_a? Array" statements
 * One-character exit command
 
-== MAYBE GONNA HAPPEN
-
-* Class and method greps to take regexes and symbols
-* Gem require to take arrays and symbols
-* Copy history to clipboard or arbitrary editor
-* Verbosity off switch for Rails
-* Test-driven strategy encompassing IRB and external editors
-
 == COMMUNITY EFFORT
 
 The majority of this code was written by other people and compiled, nicked, nabbed, herded, gathered, copied, or pilfered by me (Giles Bowkett). See copyright notice for the credits. A lot of this code comes from blogs. Check out the source code for numerous links to the original posts the code came from.
