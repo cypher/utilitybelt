@@ -7,7 +7,7 @@ body {
 margin:0 auto;
 padding:0;
 font:76% Verdana,Tahoma,Arial,sans-serif;
-background:#eaeaea url(img/bg.gif) top center repeat-y;
+background:#eaeaea url(bg.gif) top center repeat-y;
 color:#3a3a3a;
 }
 
@@ -76,7 +76,7 @@ text-decoration:none;
 color:#505050;
 display:block;
 padding:6px 0 0 10px;
-background:#f4f4f4 url(img/menubg.gif) bottom left repeat-x;
+background:#f4f4f4 url(menubg.gif) bottom left repeat-x;
 border-top:1px solid #d8d8d8;
 border-right:1px solid #d8d8d8;
 border-bottom:1px solid #d8d8d8;
@@ -84,7 +84,7 @@ border-left:4px solid #cccccc;
 }
 
 #avmenu li a:hover, #avmenu li a.current {
-background:#eaeaea url(img/menubg2.gif) bottom left repeat-x;
+background:#eaeaea url(menubg2.gif) bottom left repeat-x;
 color:#505050;
 border-top:1px solid #b0b0b0;
 border-right:1px solid #b0b0b0;
@@ -276,7 +276,7 @@ border-bottom:1px solid #d8d8d8;
 border-left:4px solid #cccccc;
 margin:16px;
 padding:7px 7px 7px 11px;
-background:#f4f4f4 url(img/menubg.gif) bottom left repeat-x;
+background:#f4f4f4 url(menubg.gif) bottom left repeat-x;
 color:#505050;
 }
 
@@ -307,7 +307,7 @@ padding:6px 0 8px 0;
 th {
 padding:7px;
 text-align:left;
-background:#eaeaea url(img/menubg2.gif) bottom left repeat-x;
+background:#eaeaea url(menubg2.gif) bottom left repeat-x;
 color:#505050;
 }
 
@@ -315,7 +315,7 @@ td {
 padding:7px;
 font-size:0.9em;
 text-align:left;
-background:#f4f4f4 url(img/menubg.gif) bottom left repeat-x;
+background:#f4f4f4 url(menubg.gif) bottom left repeat-x;
 color:#303030;
 }
 
@@ -328,7 +328,7 @@ border-bottom:1px solid #d8d8d8;
 border-left:4px solid #cccccc;
 margin:0 0 15px 0;
 padding:7px 7px 7px 11px;
-background:#f4f4f4 url(img/menubg.gif) bottom left repeat-x;
+background:#f4f4f4 url(menubg.gif) bottom left repeat-x;
 color:#505050;
 font-weight:bold;
 width:120px;
@@ -391,7 +391,7 @@ margin:10px 0 10px 0;
 padding:10px 10px 5px 10px;
 width:105px;
 color:#505050;
-background:#f4f4f4 url(img/menubg.gif) bottom left repeat-x;
+background:#f4f4f4 url(menubg.gif) bottom left repeat-x;
 border-top:1px solid #d8d8d8;
 border-right:1px solid #d8d8d8;
 border-bottom:1px solid #d8d8d8;
