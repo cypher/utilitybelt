@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+%w{rubygems platform optparse}.each {|library| require library}
+
+# command-line args
+option_parser = OptionParser.new
+option_parser.on("-b", "--bucket NAME", String) {|bucket| @bucket = bucket}
+filenames = option_parser.parse(ARGV)
+abort "Usage: amazon -b bucket_name file_name" unless @bucket && filenames
+
+# require files, populate hash
+UTILITY_BELT_IRB_STARTUP_PROCS = {}
+utility_belt_lib = File.dirname(__FILE__) + '/../lib'
+require "#{utility_belt_lib}/mac_clipboard"
+require "#{utility_belt_lib}/amazon_upload_shortcut"
+UTILITY_BELT_IRB_STARTUP_PROCS[:define_s3_convenience_methods].call
+
+# baddabing, baddaboom
+filenames.each {|filename| puts aws_upload(@bucket, filename)}
