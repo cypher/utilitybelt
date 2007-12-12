@@ -1,4 +1,4 @@
-require "string_to_proc"
+require "lib/string_to_proc"
 describe "String to Proc" do
 
   before(:all) do

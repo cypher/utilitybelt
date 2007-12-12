@@ -1,3 +1,12 @@
+# fix by Bob Hutchison:
+class String
+  unless public_method_defined? :blank?
+    def blank?
+      self !~ /\S/
+    end
+  end
+end
+
 # TODO: upgrade these to take either regexes or strings
 
 # http://gilesbowkett.blogspot.com/2006/12/smalltalk-cleverness-translated-into.html
