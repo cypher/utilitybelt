@@ -47,7 +47,7 @@ class Object
 
   private
   def get_line(line_number)
-    Readline::HISTORY[line_number]
+    Readline::HISTORY[line_number] rescue ""
   end
 
   def get_lines(lines = [])
