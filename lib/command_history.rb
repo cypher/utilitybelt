@@ -2,6 +2,27 @@
 # http://blog.bleything.net/pages
 # http://gilesbowkett.blogspot.com/2007/06/irbrc-modifications.html
 # Ben's history stuff, slightly modified, plus hvi method
+
+
+
+# Adds shell-style history display and replay to irb.  The magic happens in
+# the h, h!, and hw methods.
+#
+# == Authors
+#
+# * Ben Bleything <ben@bleything.net>
+#
+# == Copyright
+#
+# Copyright (c) 2007 Ben Bleything
+#
+# This code released under the terms of the BSD license.
+#
+# == Version
+#
+#  $Id: history.rb 50 2007-07-30 18:55:09Z ben $
+#
+
 class Object
   def history(how_many = 50)
     history_size = Readline::HISTORY.size
