@@ -1,7 +1,7 @@
 require 'rubygems' 
 SPEC = Gem::Specification.new do |s| 
   s.name = "utility_belt"
-  s.version = "1.0.2"
+  s.version = "1.0.3"
   s.author = "Giles Bowkett"
   s.email = "gilesb@gmail.com"
   s.homepage = "http://utilitybelt.rubyforge.org"
