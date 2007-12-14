@@ -9,4 +9,8 @@ describe "Hash math" do
     ({:a=>:b, :c=>:d} - {:c => :d}).should == {:a => :b}
   end
 
+  it "should only subtract hashes" do
+    lambda {({:a=>:b, :c=>:d} - :c)}.should raise_error
+  end
+
 end
