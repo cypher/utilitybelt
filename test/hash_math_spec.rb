@@ -9,8 +9,8 @@ describe "Hash math" do
     ({:a=>:b, :c=>:d} - {:c => :d}).should == {:a => :b}
   end
 
-  it "should only subtract hashes" do
-    lambda {({:a=>:b, :c=>:d} - :c)}.should raise_error
+  it "should subtract key/value pairs by key" do
+    ({:a=>:b, :c=>:d} - :c).should == {:a => :b}
   end
 
 end
