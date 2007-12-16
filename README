@@ -37,7 +37,7 @@ sudo gem install utility_belt
 
 == COMMUNITY EFFORT
 
-The majority of this code was written by other people and compiled, nicked, nabbed, herded, gathered, copied, or pilfered by me (Giles Bowkett). See copyright notice for the credits. A lot of this code comes from blogs. Check out the source code for numerous links to the original posts the code came from.
+The majority of this code was written by other people and compiled, nicked, nabbed, herded, gathered, copied, or pilfered by me (Giles Bowkett). See copyright notice for the credits. A lot of this code comes from blogs. Check out the source code for numerous links to the original posts the code came from. Thanks also to Bob Hutchison, Avdi Grimm, Marcus Derencius, Markus Prinz, Ben Bleything, Reginald Braithwaite-Lee, and Robert Berger for bug fixes, new features, documentation, and bug reports.
 
 == SYNOPSIS
 
