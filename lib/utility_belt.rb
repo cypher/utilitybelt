@@ -26,6 +26,7 @@ UTILITY_BELT_IRB_STARTUP_PROCS = {}
    interactive_editor
    string_to_proc
    symbol_to_proc
+   hash_math
    with}.each {|internal_library| require internal_library}
 
 # default: dark background
