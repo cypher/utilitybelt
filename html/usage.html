@@ -251,6 +251,15 @@ end</pre>
 (1..3).map(&amp;&apos;x -&gt; y -&gt; x * y&apos;).map(&amp;&apos;.call(2)&apos;) =&gt; [2, 4, 6]
 [5].map(&amp;&quot;(1.._).inject(&amp;&apos;*&apos;)&quot;) =&gt; [120]</pre>
 
+			<h4>Add and subtract Hashes with + and -</h4>
+
+<pre>{:a =&gt; :b} + {:c =&gt; :d} = {:a =&gt; :b, :c =&gt; :d}
+{:a =&gt; :b, :c =&gt; :d} - {:c =&gt; :d} = {:a =&gt; :b}
+{:a =&gt; :b, :c =&gt; :d} - :c = {:a =&gt; :b}</pre>
+
+			  <p>You could already do this with Arrays; now you can do it with Hashes as well. (I was kinda surprised the first time I tried to do this and realized I'd have to write it myself.)</p>
+
+
 			<h4>Grammatically-correct is_an? method - no more "is_a? Array" statements</h4>
 
 <pre>&gt;&gt; [].is_an? Array

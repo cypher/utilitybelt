@@ -32,6 +32,7 @@ sudo gem install utility_belt
 * Extremely basic themes for Wirble syntax coloring
 * Pascal/JavaScript-style "with" statement
 * String#to_proc
+* Add and subtract Hashes with + and -
 * Grammatically-correct is_an? method - no more "is_a? Array" statements
 * One-character exit command
 
@@ -258,6 +259,14 @@ Syntactic sugar for functional programming.
   [5].map(&"(1.._).inject(&'*')") => [120]
 
 For more detail see: http://weblog.raganwald.com/2007/10/stringtoproc.html
+
+== Add and subtract Hashes with + and -
+
+  {:a => :b} + {:c => :d} = {:a => :b, :c => :d}
+  {:a => :b, :c => :d} - {:c => :d} = {:a => :b}
+  {:a => :b, :c => :d} - :c = {:a => :b}
+
+  You could already do this with Arrays; now you can do it with Hashes as well. (I was kinda surprised the first time I tried to do this and realized I'd have to write it myself.)
 
 == Grammatically-correct is_an? method - no more "is_a? Array" statements
 
