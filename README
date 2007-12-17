@@ -61,15 +61,19 @@ Using each of Utility Belt's tools is different:
 
 If your preferred text editor is vi(m), emacs, or TextMate, there are built-in commands: vi, emacs, and mate, respectively. To use another editor, use this command:
 
-  edit(:the_name_of_my_editor)
+  edit_interactively(:the_name_of_my_editor)
 
 or
 
-  edit("the name of my editor")
+  edit_interactively("the name of my editor")
 
 or
 
-  edit("/the/path/to/my/editor")
+  edit_interactively("/the/path/to/my/editor")
+
+If you're wondering why the method name is so ridiculously long, there's a story there:
+
+http://gilesbowkett.blogspot.com/2007/12/utility-belt-vs-rails.html
 
 == Read from and write to OS X clipboard
 

@@ -53,15 +53,17 @@ require 'utility_belt'</pre>
 
 			<p>If your preferred text editor is vi(m), emacs, or TextMate, there are built-in commands: vi, emacs, and mate, respectively. To use another editor, use this command:</p>
 
-<pre>edit(:the_name_of_my_editor)</pre>
+<pre>edit_interactively(:the_name_of_my_editor)</pre>
 
 			<p>or</p>
 
-<pre>edit("the name of my editor")</pre>
+<pre>edit_interactively("the name of my editor")</pre>
 
 			<p>or</p>
 
-<pre>edit("/the/path/to/my/editor")</pre>
+<pre>edit_interactively("/the/path/to/my/editor")</pre>
+
+			<p>If you're wondering why the method name is so ridiculously long, <a href="http://gilesbowkett.blogspot.com/2007/12/utility-belt-vs-rails.html" title="Giles Bowkett: Utility Belt vs. Rails">there's a story there</a>.</p>
 
 			<h4>Read from and write to OS X clipboard</h4>
 

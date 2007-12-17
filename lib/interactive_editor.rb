@@ -7,7 +7,7 @@ class InteractiveEditor
       @editor = "mate -w"
     end
   end
-  def edit
+  def edit_interactively
     unless @file
       @file = Tempfile.new("irb_tempfile")
     end
@@ -19,24 +19,24 @@ class InteractiveEditor
 end
 
 class Object
-  def edit(editor)
+  def edit_interactively(editor)
     unless IRB.conf[:interactive_editors] && IRB.conf[:interactive_editors][editor]
       IRB.conf[:interactive_editors] ||= {}
       IRB.conf[:interactive_editors][editor] = InteractiveEditor.new(editor)
     end
-    IRB.conf[:interactive_editors][editor].edit
+    IRB.conf[:interactive_editors][editor].edit_interactively
   end
 
   def vi
-    edit(:vim)
+    edit_interactively(:vim)
   end
 
   def mate
-    edit(:mate)
+    edit_interactively(:mate)
   end
 
   def emacs
-    edit(:emacs)
+    edit_interactively(:emacs)
   end
 end
 
