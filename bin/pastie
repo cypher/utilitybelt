@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+%w{rubygems platform net/http}.each {|library| require library}
+
+require "#{File.dirname(__FILE__) + '/../lib'}/pastie"
+
+pastie ARGV[0]
