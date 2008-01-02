@@ -1,19 +1,19 @@
 require 'rubygems' 
 SPEC = Gem::Specification.new do |s| 
   s.name = "utility_belt"
-  s.version = "1.0.6"
+  s.version = "1.0.7"
   s.author = "Giles Bowkett"
   s.email = "gilesb@gmail.com"
   s.homepage = "http://utilitybelt.rubyforge.org"
   s.platform = Gem::Platform::RUBY
   s.summary = "A grab-bag of IRB power user madness."
   s.files = Dir.glob("**/*")
-  %w{amazon google}.each do |command_line_utility_for_interacting_with_a_gigantic_self_aware_ai|
-    s.executables << command_line_utility_for_interacting_with_a_gigantic_self_aware_ai
+  %w{amazon google pastie}.each do |command_line_utility|
+    s.executables << command_line_utility
   end
   s.require_path = "lib"
   s.autorequire = "utility_belt"
-  s.test_file = "test/utility_belt_spec.rb"
+  s.test_file = "spec/utility_belt_spec.rb"
   s.has_rdoc = true 
   s.extra_rdoc_files = ["README"] 
   s.add_dependency("wirble", ">= 0.1.2")

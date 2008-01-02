@@ -1,18 +1,10 @@
 #!/usr/bin/env ruby
-%w{rubygems platform cgi}.each {|library| require library}
+%w{rubygems platform net/http}.each {|library| require library}
 
 if :macosx != Platform::IMPL
   abort "Utility Belt's command-line Google shortcut only works on OS X. Sorry."
 else
-  require "#{File.dirname(__FILE__) + '/../lib'}/mac_clipboard"
-  search_term = ARGV[0] || MacClipboard.read
-  if search_term.empty?
-    puts "Usage: google search_term_without_spaces"
-    puts "       google 'search term with spaces'"
-    puts "       google"
-    puts "              (if invoking without command-line args, must have text in clipboard)"
-    puts "              (if you're seeing this there's a good chance you copied an image or something)"
-    exit
-  end
-  system("open http://google.com/search?q=#{CGI.escape(search_term)}")
+  require "#{File.dirname(__FILE__) + '/../lib'}/google"
 end
+
+google(ARGV[0])

@@ -1,4 +1,4 @@
-# # automate creating pasties
+# automate creating pasties
 %w{platform net/http mac_clipboard}.each {|lib| require lib}
 class Object
   def pastie(stuff_to_paste = nil)

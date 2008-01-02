@@ -23,6 +23,8 @@
 #  $Id: history.rb 50 2007-07-30 18:55:09Z ben $
 #
 
+require 'tempfile'
+
 class Object
   def history(how_many = 50)
     history_size = Readline::HISTORY.size

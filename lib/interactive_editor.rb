@@ -1,4 +1,5 @@
 # Giles Bowkett, Greg Brown, and several audience members from Giles' Ruby East presentation.
+require 'tempfile'
 class InteractiveEditor
   attr_accessor :editor
   def initialize(editor = :vim)
