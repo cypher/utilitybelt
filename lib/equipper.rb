@@ -5,7 +5,7 @@
 module UtilityBelt
   class << self
     def equip(*args)
-      Equipper.equip
+      Equipper.equip(*args)
     end
     def equipped?
       Equipper.equipped?
@@ -56,7 +56,7 @@ module UtilityBelt
             gadget = arg.to_s
         
             # Silently ignore unkown gadgets
-            gadgets_to_equip << gadget if ALL_GADGETS.include? gadget
+            gadgets_to_equip << gadget if GADGETS.include? gadget
           end
         end
     
