@@ -5,7 +5,7 @@
 
 UTILITY_BELT_IRB_STARTUP_PROCS = {}
 
-%w{rubygems equipper}.each {|internal_library| require internal_library}
+%w{rubygems utility_belt/equipper}.each {|internal_library| require internal_library}
 
 # default: dark background
 UtilityBelt::Themes.background(:dark) if defined? UtilityBelt::Themes
