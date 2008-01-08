@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-%w{rubygems platform cgi mac_clipboard}.each {|library| require library}
+%w{rubygems platform cgi utility_belt/mac_clipboard}.each {|library| require library}
 
 class Object
   if :macosx == Platform::IMPL

@@ -5,7 +5,7 @@ Platform = Module.new unless Object.const_defined?('Platform')
 Net = Module.new unless Object.const_defined?('Net')
 
 Platform::IMPL = :macosx
-require File.expand_path(File.join(File.dirname(__FILE__),'..','lib','pastie'))
+require File.expand_path(File.join(File.dirname(__FILE__),'..','lib/utility_belt','pastie'))
 
 describe "pastie being called on a mac" do
   

@@ -1,4 +1,4 @@
-require 'lib/equipper'
+require 'lib/utility_belt/equipper'
 
 # Mocks for the gadgets
 UTILITY_BELT_IRB_STARTUP_PROCS = {}

@@ -1,5 +1,5 @@
 # automate creating pasties
-%w{platform net/http mac_clipboard}.each {|lib| require lib}
+%w{platform net/http utility_belt/mac_clipboard}.each {|lib| require lib}
 class Object
   def pastie(stuff_to_paste = nil)
     stuff_to_paste ||= MacClipboard.read if :macosx == Platform::IMPL

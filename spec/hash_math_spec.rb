@@ -1,4 +1,4 @@
-require "lib/hash_math"
+require "lib/utility_belt/hash_math"
 describe "Hash math" do
   
   it "should add hashes" do
