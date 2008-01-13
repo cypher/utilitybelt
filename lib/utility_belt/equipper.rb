@@ -17,6 +17,7 @@ module UtilityBelt
     end
   
     DEFAULTS = %w{hash_math
+                  wirble
                   interactive_editor
                   irb_options
                   syntax_coloring}

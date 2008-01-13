@@ -1,2 +1,0 @@
-require 'wirble'
-Wirble.init

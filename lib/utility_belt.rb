@@ -8,8 +8,6 @@ UTILITY_BELT_IRB_STARTUP_PROCS = {} unless Object.const_defined? :UTILITY_BELT_I
 %w{rubygems utility_belt/equipper}.each {|internal_library| require internal_library}
 
 if Object.const_defined? :IRB
-  # default: dark background
-  UtilityBelt::Themes.background(:dark) if defined? UtilityBelt::Themes
 
   # Called when the irb session is ready, after any external libraries have been loaded. This
   # allows the user to specify which gadgets in the utility belt to equip. (Kind of pushing the
@@ -18,4 +16,7 @@ if Object.const_defined? :IRB
     UtilityBelt.equip(:defaults) unless UtilityBelt.equipped?
     UTILITY_BELT_IRB_STARTUP_PROCS.each {|symbol, proc| proc.call}
   end
+  
+  # default: dark background
+  UtilityBelt::Themes.background(:dark) if defined? UtilityBelt::Themes
 end
