@@ -50,3 +50,5 @@ module UtilityBelt
     
   end
 end
+
+Clipboard = UtilityBelt::Clipboard
