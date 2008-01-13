@@ -4,11 +4,18 @@
 # Extended to handle windows and linux as well
 require 'platform'
 
-case Platform::IMPL
-when :macosx
+module UtilityBelt
+  class Clipboard
+    
+    @@implemented = false
+    
+    def self.available?
+      @@implemented
+    end
+    
+    case Platform::IMPL
+    when :macosx
 
-  module UtilityBelt
-    class Clipboard
       def self.read
         IO.popen('pbpaste') {|clipboard| clipboard.read}
       end
@@ -16,17 +23,14 @@ when :macosx
       def self.write(stuff)
         IO.popen('pbcopy', 'w+') {|clipboard| clipboard.write(stuff)}
       end
-    end
-  end
+      @@implemented = true
   
-when :mswin
+    when :mswin
 
-  begin
-    # Try loading the win32-clipboard gem
-    require 'win32/clipboard'
+      begin
+        # Try loading the win32-clipboard gem
+        require 'win32/clipboard'
 
-    module UtilityBelt
-      class Clipboard
         def self.read
           Win32::Clipboard.data
         end
@@ -34,13 +38,15 @@ when :mswin
         def self.write(stuff)
           Win32::Clipboard.set_data(stuff)
         end
-      end
-    end
+        @@implemented = true
 
-  rescue LoadError
-    raise "You need the win32-clipboard gem for clipboard functionality!"
-  end
+      rescue LoadError
+        raise "You need the win32-clipboard gem for clipboard functionality!"
+      end
   
-else
-  raise "No suitable clipboard implementation for your platform found!"
+    else
+      raise "No suitable clipboard implementation for your platform found!"
+    end
+    
+  end
 end
