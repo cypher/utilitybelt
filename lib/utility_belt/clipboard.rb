@@ -49,4 +49,4 @@ module UtilityBelt
   end
 end
 
-Clipboard = UtilityBelt::Clipboard
+Clipboard = UtilityBelt::Clipboard if Object.const_defined? :IRB

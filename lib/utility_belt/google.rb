@@ -28,4 +28,6 @@ module UtilityBelt
   end
 end
 
-Object.extend(UtilityBelt::Google)
+class Object
+  include UtilityBelt::Google
+end if Object.const_defined? :IRB
