@@ -1,8 +1,8 @@
 # automate creating pasties
-%w{platform net/http utility_belt/mac_clipboard}.each {|lib| require lib}
+%w{platform net/http utility_belt/clipboard}.each {|lib| require lib}
 class Object
   def pastie(stuff_to_paste = nil)
-    stuff_to_paste ||= MacClipboard.read if :macosx == Platform::IMPL
+    stuff_to_paste ||= Clipboard.read if Clipboard.available?
     # return nil unless stuff_to_paste
 
     pastie_url = Net::HTTP.post_form(URI.parse("http://pastie.caboo.se/pastes/create"),

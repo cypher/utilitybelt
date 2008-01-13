@@ -1,12 +1,12 @@
 #!/usr/bin/env ruby
 %w{rubygems platform cgi}.each {|library| require library}
 
-UtilityBelt.equip(:mac_clipboard)
+UtilityBelt.equip(:clipboard)
 
 module UtilityBelt
   module Google
     def google(search_term = nil)
-      search_term ||= MacClipboard.read if :macosx == Platform::IMPL
+      search_term ||= Clipboard.read if Clipboard.available?
       if search_term.empty?
         puts "Usage: google search_term_without_spaces           (Unix command line only)"
         puts "       google 'search term with spaces'            (Unix or IRB)"

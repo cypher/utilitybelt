@@ -6,7 +6,7 @@ UTILITY_BELT_IRB_STARTUP_PROCS[:define_s3_convenience_methods] = lambda do
                                         :secret_access_key => ENV['AMAZON_SECRET_ACCESS_KEY'])
     AWS::S3::S3Object.store(filename, open(filename), bucket, :access => :public_read)
     url = "http://s3.amazonaws.com/#{bucket}/#{filename}".gsub(/ /, "%20")
-    MacClipboard.write(url) if :macosx == Platform::IMPL && defined? MacClipboard
+    Clipboard.write(url) if Clipboard.available?
     url
   end
 end
