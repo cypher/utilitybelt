@@ -16,9 +16,9 @@ module UtilityBelt
         url = "http://google.com/search?q=#{CGI.escape(search_term)}"
         case Platform::IMPL
         when :macosx
-          system("open #{url}")
+          Kernel.system("open #{url}")
         when :windows
-          system("start #{url}")
+          Kernel.system("start #{url}")
         #when :linux
         else
           puts "Sorry, don't know how to open an URL from the command line on your platform"
