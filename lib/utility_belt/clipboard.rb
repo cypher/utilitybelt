@@ -7,10 +7,8 @@ require 'platform'
 module UtilityBelt
   class Clipboard
     
-    @@implemented = false
-    
     def self.available?
-      @@implemented
+      @@implemented || false
     end
     
     case Platform::IMPL
