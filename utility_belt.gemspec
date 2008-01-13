@@ -5,6 +5,7 @@ SPEC = Gem::Specification.new do |s|
   s.author = "Giles Bowkett"
   s.email = "gilesb@gmail.com"
   s.homepage = "http://utilitybelt.rubyforge.org"
+  s.rubyforge_project = "utility_belt"
   s.platform = Gem::Platform::RUBY
   s.summary = "A grab-bag of IRB power user madness."
   s.files = Dir.glob("**/*")
@@ -12,7 +13,6 @@ SPEC = Gem::Specification.new do |s|
     s.executables << command_line_utility
   end
   s.require_path = "lib"
-  s.autorequire = "utility_belt"
   s.test_file = "spec/utility_belt_spec.rb"
   s.has_rdoc = true 
   s.extra_rdoc_files = ["README"] 
