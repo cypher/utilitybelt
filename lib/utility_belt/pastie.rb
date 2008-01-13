@@ -1,5 +1,7 @@
 # automate creating pasties
 %w{platform net/http utility_belt}.each {|lib| require lib}
+UtilityBelt.equip(:clipboard)
+
 module UtilityBelt
   module Pastie
     def pastie(stuff_to_paste = nil)
@@ -11,9 +13,13 @@ module UtilityBelt
                                         "paste[authorization]" => "burger",
                                         "paste[body]" => stuff_to_paste}).body.match(/href="([^\"]+)"/)[1]
 
-      if :macosx == Platform::IMPL
-        MacClipboard.write(pastie_url)
+      Clipboard.write(pastie_url) if Clipboard.available?
+      
+      case Platform::IMPL
+      when :macosx
         Kernel.system("open #{pastie_url}")
+      when :mswin
+        Kernel.system("start #{pastie_url}")
       end
 
       return pastie_url
