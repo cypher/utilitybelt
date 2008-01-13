@@ -3,7 +3,7 @@
 # Check that file for usage information, authorship, copyright, and extensive details. You can also find a
 # nice, HTMLified version of the README content at http://utilitybelt.rubyforge.org.
 
-UTILITY_BELT_IRB_STARTUP_PROCS = {}
+UTILITY_BELT_IRB_STARTUP_PROCS = {} unless Object.const_defined? :UTILITY_BELT_IRB_STARTUP_PROCS
 
 %w{rubygems utility_belt/equipper}.each {|internal_library| require internal_library}
 
