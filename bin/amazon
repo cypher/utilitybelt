@@ -8,11 +8,9 @@ filenames = option_parser.parse(ARGV)
 abort "Usage: amazon -b bucket_name file_name" unless @bucket && filenames
 
 # require files, populate hash
-UTILITY_BELT_IRB_STARTUP_PROCS = {}
-utility_belt_lib = File.dirname(__FILE__) + '/../lib'
-require "#{utility_belt_lib}/clipboard"
-require "#{utility_belt_lib}/amazon_upload_shortcut"
-UTILITY_BELT_IRB_STARTUP_PROCS[:define_s3_convenience_methods].call
+require 'utility_belt'
+UtilityBelt.equip(:amazon_upload_shortcut)
+include UtilityBelt::AmazonUploadShortcut
 
 # baddabing, baddaboom
 filenames.each {|filename| puts aws_upload(@bucket, filename)}
