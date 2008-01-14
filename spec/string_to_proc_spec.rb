@@ -1,3 +1,4 @@
+require File.join(File.dirname(__FILE__), "spec_helper")
 require "lib/utility_belt/string_to_proc"
 describe "String to Proc" do
 

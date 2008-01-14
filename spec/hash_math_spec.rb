@@ -1,6 +1,7 @@
+require File.join(File.dirname(__FILE__), "spec_helper")
 require "lib/utility_belt/hash_math"
 describe "Hash math" do
-  
+
   it "should add hashes" do
     ({:a => :b} + {:c => :d}).should == {:a => :b, :c => :d}
   end

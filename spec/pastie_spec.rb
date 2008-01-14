@@ -1,3 +1,4 @@
+require File.join(File.dirname(__FILE__), "spec_helper")
 require 'rubygems'
 gem 'rspec'
 require 'spec'
@@ -10,13 +11,13 @@ include UtilityBelt::Pastie
 Clipboard = UtilityBelt::Clipboard unless Object.const_defined?('Clipboard')
 
 describe "pastie being called" do
-  
+
   before(:all) do
     Net::HTTP = mock('HTTP') unless Net.const_defined?('HTTP')
     URI = mock('URI') unless Object.const_defined?('URI')
     Clipboard = mock('clipboard') unless Object.const_defined?('Clipboard')
   end
-  
+
   before(:each) do
     @page = mock('page')
     @page.stub!(:body).and_return('href="foo"')
@@ -26,7 +27,7 @@ describe "pastie being called" do
     Clipboard.stub!(:write)
     Kernel.stub!(:system)
   end
-  
+
   it "should be available in global namespace and not blow-up with default stub/mocking" do
     pastie
   end
@@ -41,7 +42,7 @@ describe "pastie being called" do
     Net::HTTP.should_receive(:post_form).with('a_uri_object', anything()).and_return(@page)
     pastie
   end
-  
+
   it "should call system open on the pastie return" do
     @page.should_receive(:body).and_return('href="returned_url"')
     case Platform::IMPL
@@ -59,7 +60,7 @@ describe "pastie being called" do
     pastie
   end
 
-  describe "with no parameter it uses the clipboard" do 
+  describe "with no parameter it uses the clipboard" do
     it "should read the clipboard" do
       Clipboard.should_receive(:read)
       pastie
@@ -74,13 +75,13 @@ describe "pastie being called" do
     end
   end
 
- describe "with a parameter instead" do 
+ describe "with a parameter instead" do
    #TODO: windows/linux safer now, since no clipboard functionality?
-    it "should not even read the clipboard" do 
+    it "should not even read the clipboard" do
       Clipboard.should_not_receive(:read)
       pastie "baz"
     end
-    
+
     it "should pass in the parameter instead" do
       Net::HTTP.should_receive(:post_form).with(anything(),{"paste_parser" => "ruby",
         "paste[authorization]" => "burger",
@@ -89,4 +90,3 @@ describe "pastie being called" do
     end
   end
 end
-
