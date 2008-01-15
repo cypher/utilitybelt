@@ -12,9 +12,7 @@ module UtilityBelt
     end
   end
   module Equipper
-    GADGETS = Dir['./lib/utility_belt/*.rb'].map{|file| file[19..-4]}.reject do |gadget|
-      %w{equipper}.include? gadget
-    end
+    GADGETS = Dir[File.join(File.dirname(__FILE__), '*.rb')].map{|file| File.basename(file)[0..-4]}.reject{|gadget| "equipper" == gadget }
 
     DEFAULTS = %w{hash_math
                   interactive_editor
