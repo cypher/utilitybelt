@@ -14,10 +14,11 @@ module UtilityBelt
   module Equipper
     GADGETS = Dir[File.join(File.dirname(__FILE__), '*.rb')].map{|file| File.basename(file)[0..-4]}.reject{|gadget| "equipper" == gadget }
 
-    DEFAULTS = %w{hash_math
+    DEFAULTS = %w{wirble
+                  hash_math
                   interactive_editor
                   irb_options
-                  wirble}
+                  irb_verbosity_control}
 
     @equipped = false
 
