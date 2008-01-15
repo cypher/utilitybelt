@@ -16,7 +16,8 @@ module UtilityBelt
 
     DEFAULTS = %w{hash_math
                   interactive_editor
-                  irb_options}
+                  irb_options
+                  wirble}
 
     @equipped = false
 
