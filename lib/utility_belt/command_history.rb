@@ -56,15 +56,28 @@ class Object
     end
     file.close
   end
+  
+  # hack to handle JRuby bug
+  def handling_jruby_bug(&block)
+    if RUBY_PLATFORM =~ /java/
+      puts "JRuby IRB has a bug which prevents successful IRB vi interoperation."
+      puts "The JRuby team is aware of this and working on it."
+      puts "(http://jira.codehaus.org/browse/JRUBY-2049)"
+    else
+      yield
+    end
+  end
 
   # TODO: history_write should go to a file, or the clipboard, or a file which opens in an application
   def history_to_vi
-    file = Tempfile.new("irb_tempfile")
-    get_lines(0..(Readline::HISTORY.size - 1)).each do |line|
-      file << "#{line}\n"
+    handling_jruby_bug do
+      file = Tempfile.new("irb_tempfile")
+      get_lines(0..(Readline::HISTORY.size - 1)).each do |line|
+        file << "#{line}\n"
+      end
+      file.close
+      system("vim #{file.path}")
     end
-    file.close
-    system("vim #{file.path}")
   end
   alias :hvi :history_to_vi
 

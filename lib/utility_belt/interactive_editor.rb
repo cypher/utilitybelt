@@ -20,10 +20,6 @@ class InteractiveEditor
     raise "Could not determine what editor to use.  Please specify."
   end
 
-  # if RUBY_PLATFORM =~ /java/
-  #   handle vi bug
-  # end
-
   attr_accessor :editor
   def initialize(editor = :vim)
     @editor = editor.to_s
@@ -50,9 +46,19 @@ module InteractiveEditing
     end
     IRB.conf[:interactive_editors][editor].edit_interactively
   end
+  
+  def handling_jruby_bug(&block)
+    if RUBY_PLATFORM =~ /java/
+      puts "JRuby IRB has a bug which prevents successful IRB vi/emacs editing."
+      puts "The JRuby team is aware of this and working on it."
+      puts "(http://jira.codehaus.org/browse/JRUBY-2049)"
+    else
+      yield
+    end
+  end
 
   def vi
-    edit_interactively(:vim)
+    handling_jruby_bug {edit_interactively(:vim)}
   end
 
   def mate
@@ -62,7 +68,7 @@ module InteractiveEditing
   # TODO: Hardcore Emacs users use emacsclient or gnuclient to open documents in
   # their existing sessions, rather than starting a brand new Emacs process.
   def emacs
-    edit_interactively(:emacs)
+    handling_jruby_bug {edit_interactively(:emacs)}
   end
 end
 
