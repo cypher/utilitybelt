@@ -6,19 +6,23 @@ class InteractiveEditor
   XDG_OPEN               = "/usr/bin/xdg-open"
 
   def self.sensible_editor
-    if ENV["VISUAL"] then return ENV["VISUAL"] end
-    if ENV["EDITOR"] then return ENV["EDITOR"] end
-    if Platform::IMPL == :macosx then return MACOSX_OPEN_CMD end
-    if Platform::IMPL == :linux then
-      if File.executable?(XDG_OPEN) then
+    return ENV["VISUAL"] if ENV["VISUAL"]
+    return ENV["EDITOR"] if ENV["EDITOR"]
+    return MACOSX_OPEN_CMD if Platform::IMPL == :macosx
+    if Platform::IMPL == :linux
+      if File.executable?(XDG_OPEN)
         return XDG_OPEN
       end
-      if File.executable?(DEBIAN_SENSIBLE_EDITOR) then
+      if File.executable?(DEBIAN_SENSIBLE_EDITOR)
         return DEBIAN_SENSIBLE_EDITOR
       end
     end
     raise "Could not determine what editor to use.  Please specify."
   end
+
+  # if RUBY_PLATFORM =~ /java/
+  #   handle vi bug
+  # end
 
   attr_accessor :editor
   def initialize(editor = :vim)
