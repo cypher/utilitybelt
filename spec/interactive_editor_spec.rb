@@ -4,7 +4,7 @@ require File.join(File.dirname(__FILE__), "spec_helper")
 require 'spec'
 require 'irb'
 require 'delegate'
-require File.join(File.dirname(__FILE__), '..', 'lib', 'interactive_editor')
+require File.join(File.dirname(__FILE__), '..', 'lib', 'utility_belt', 'interactive_editor')
 
 # Using SimpleDelegator allows us to replace the constants without triggering a
 # "constant redefined" warning.
