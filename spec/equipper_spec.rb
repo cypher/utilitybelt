@@ -1,15 +1,6 @@
 require File.join(File.dirname(__FILE__), "spec_helper")
 require 'lib/utility_belt/equipper'
 
-# Mocks for the gadgets
-UTILITY_BELT_IRB_STARTUP_PROCS = {}
-
-module IRB
-  def self.conf
-    {}
-  end
-end
-
 describe "UtilityBelt equipper" do
 
   ALL_GADGETS = UtilityBelt::Equipper::GADGETS
