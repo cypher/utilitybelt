@@ -1,5 +1,8 @@
+#!/usr/bin/env ruby
 require File.join(File.dirname(__FILE__), "spec_helper")
-require "lib/utility_belt/hash_math"
+
+require 'utility_belt/hash_math'
+
 describe "Hash math" do
   
   before do

@@ -1,9 +1,8 @@
 #!/usr/bin/env ruby
 require File.join(File.dirname(__FILE__), "spec_helper")
 
-require 'spec'
 require 'irb'
-require File.join(File.dirname(__FILE__), '..', 'lib', 'utility_belt', 'convertable_to_file')
+require 'utility_belt/convertable_to_file'
 
 describe ConvertableToFile do
   include ConvertableToFile

@@ -1,11 +1,10 @@
+#!/usr/bin/env ruby
 require File.join(File.dirname(__FILE__), "spec_helper")
-require 'rubygems'
-gem 'rspec'
-require 'spec'
+
 Platform = Module.new unless Object.const_defined?('Platform')
 Net = Module.new unless Object.const_defined?('Net')
 
-require File.expand_path(File.join(File.dirname(__FILE__),'..','lib/utility_belt'))
+require 'utility_belt'
 UtilityBelt.equip(:pastie)
 include UtilityBelt::Pastie
 Clipboard = UtilityBelt::Clipboard unless Object.const_defined?('Clipboard')

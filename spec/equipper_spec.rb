@@ -1,5 +1,7 @@
+#!/usr/bin/env ruby
 require File.join(File.dirname(__FILE__), "spec_helper")
-require 'lib/utility_belt/equipper'
+
+require 'utility_belt/equipper'
 
 describe "UtilityBelt equipper" do
 
