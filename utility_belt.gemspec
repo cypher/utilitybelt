@@ -19,4 +19,5 @@ SPEC = Gem::Specification.new do |s|
   s.add_dependency("wirble", ">= 0.1.2")
   s.add_dependency("aws-s3", ">= 0.4.0")
   s.add_dependency("Platform", ">= 0.4.0")
+  s.add_dependency("guessmethod", ">= 0.2.1")
 end 
